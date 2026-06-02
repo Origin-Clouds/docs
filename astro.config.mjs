@@ -6,9 +6,17 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'Origin Clouds',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/origin-clouds/docs' }],
 			sidebar: [
+				{
+					label: 'Getting Started',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Overview', slug: 'overview/overview' },
+						{ label: 'Quickstart', slug: 'overview/quickstart' },
+					],
+				},
 				{
 					label: 'Guides',
 					items: [
