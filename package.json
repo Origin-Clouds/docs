@@ -7,11 +7,17 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "tsc && vite build && wrangler deploy --dry-run",
+    "deploy": "wrangler pages deploy",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.39.2",
     "astro": "^6.3.1",
+    "hono": "^4.12.23",
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "wrangler": "^4.96.0"
   }
 }
