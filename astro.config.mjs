@@ -25,6 +25,7 @@ export default defineConfig({
 						{ label: 'Python', slug: 'languages/python/hello-world' },
 						{ label: 'Go', slug: 'languages/go/hello-world' },
 						{ label: 'Rust', slug: 'languages/rust/hello-world' },
+						{ label: 'Java / Spring Boot', slug: 'languages/java/hello-world' },
 					],
 				},
 				{

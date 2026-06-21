@@ -1,0 +1,59 @@
+---
+title: Java / Spring Boot Hello World
+description: Deploy a Spring Boot REST API to Origin Clouds.
+---
+
+import DeployButton from '../../../../components/DeployButton.astro';
+
+Create a Spring Boot application with a REST controller.
+
+`src/main/java/com/example/demo/HelloController.java`:
+
+```java
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+public class HelloController {
+
+    @GetMapping("/")
+    public Map<String, String> hello() {
+        return Map.of("message", "Hello World");
+    }
+}
+```
+
+`src/main/java/com/example/demo/DemoApplication.java`:
+
+```java
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+
+Run it locally:
+
+```bash
+./mvnw spring-boot:run
+```
+
+```bash
+curl http://localhost:8080
+# {"message":"Hello World"}
+```
+
+Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
+
+<DeployButton language="java" />

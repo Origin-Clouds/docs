@@ -1,6 +1,6 @@
 ---
 title: Python Hello World
-description: Deploy a Python hello world to Origin Clouds.
+description: Deploy a Python FastAPI API server to Origin Clouds.
 ---
 
 import DeployButton from '../../../../components/DeployButton.astro';
@@ -8,13 +8,25 @@ import DeployButton from '../../../../components/DeployButton.astro';
 Create a file named `main.py` with the following content:
 
 ```py
-print("Hello, Origin Clouds!")
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 ```
 
-Run it locally:
+Install dependencies and run it locally:
 
 ```bash
-python main.py
+pip install fastapi uvicorn
+uvicorn main:app --reload
+```
+
+```bash
+curl http://localhost:8000
+# {"message":"Hello World"}
 ```
 
 Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.

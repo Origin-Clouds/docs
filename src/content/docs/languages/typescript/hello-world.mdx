@@ -1,6 +1,6 @@
 ---
 title: TypeScript Hello World
-description: Deploy a TypeScript hello world to Origin Clouds.
+description: Deploy a TypeScript Express API server to Origin Clouds.
 ---
 
 import DeployButton from '../../../../components/DeployButton.astro';
@@ -8,14 +8,30 @@ import DeployButton from '../../../../components/DeployButton.astro';
 Create a file named `index.ts` with the following content:
 
 ```ts
-const greeting: string = "Hello, Origin Clouds!";
-console.log(greeting);
+import express, { Request, Response } from 'express';
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (_req: Request, res: Response) => {
+  res.json({ message: "Hello World" });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 ```
 
-Run it locally:
+Install dependencies and run it locally:
 
 ```bash
+npm init -y && npm install express && npm install -D typescript @types/express tsx
 npx tsx index.ts
+```
+
+```bash
+curl http://localhost:3000
+# {"message":"Hello World"}
 ```
 
 Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
