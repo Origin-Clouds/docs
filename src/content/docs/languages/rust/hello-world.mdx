@@ -1,0 +1,56 @@
+---
+title: Rust Hello World
+description: Deploy a Rust Actix-web API server to Origin Clouds.
+---
+
+import DeployButton from '../../../../components/DeployButton.astro';
+
+Create a new project and edit `src/main.rs`:
+
+```rust
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
+use serde::Serialize;
+
+#[derive(Serialize)]
+struct Message {
+    message: String,
+}
+
+#[get("/")]
+async fn hello() -> impl Responder {
+    HttpResponse::Ok().json(Message {
+        message: "Hello World".to_string(),
+    })
+}
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| App::new().service(hello))
+        .bind(("0.0.0.0", 8080))?
+        .run()
+        .await
+}
+```
+
+Update `Cargo.toml` dependencies:
+
+```toml
+[dependencies]
+actix-web = "4"
+serde = { version = "1", features = ["derive"] }
+```
+
+Run it locally:
+
+```bash
+cargo run
+```
+
+```bash
+curl http://localhost:8080
+# {"message":"Hello World"}
+```
+
+Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
+
+<DeployButton language="rust" />

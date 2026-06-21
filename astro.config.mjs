@@ -18,6 +18,18 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Languages & Frameworks',
+					items: [
+						{ label: 'Overview', slug: 'languages' },
+						{ label: 'Node.js', slug: 'languages/node/hello-world' },
+						{ label: 'TypeScript', slug: 'languages/typescript/hello-world' },
+						{ label: 'Python', slug: 'languages/python/hello-world' },
+						{ label: 'Go', slug: 'languages/go/hello-world' },
+						{ label: 'Rust', slug: 'languages/rust/hello-world' },
+						{ label: 'Java / Spring Boot', slug: 'languages/java/hello-world' },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.

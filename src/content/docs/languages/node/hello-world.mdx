@@ -1,0 +1,38 @@
+---
+title: Node.js Hello World
+description: Deploy a Node.js Express API server to Origin Clouds.
+---
+
+import DeployButton from '../../../../components/DeployButton.astro';
+
+Create a file named `index.js` with the following content:
+
+```js
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.json({ message: "Hello World" });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+```
+
+Install dependencies and run it locally:
+
+```bash
+npm init -y && npm install express
+node index.js
+```
+
+```bash
+curl http://localhost:3000
+# {"message":"Hello World"}
+```
+
+Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
+
+<DeployButton language="node" />
