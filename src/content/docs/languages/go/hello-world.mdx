@@ -1,0 +1,28 @@
+---
+title: Go Hello World
+description: Deploy a Go hello world to Origin Clouds.
+---
+
+import DeployButton from '../../../../components/DeployButton.astro';
+
+Create a file named `main.go` with the following content:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, Origin Clouds!")
+}
+```
+
+Run it locally:
+
+```bash
+go run main.go
+```
+
+Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
+
+<DeployButton language="go" />

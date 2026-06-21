@@ -1,0 +1,23 @@
+---
+title: TypeScript Hello World
+description: Deploy a TypeScript hello world to Origin Clouds.
+---
+
+import DeployButton from '../../../../components/DeployButton.astro';
+
+Create a file named `index.ts` with the following content:
+
+```ts
+const greeting: string = "Hello, Origin Clouds!";
+console.log(greeting);
+```
+
+Run it locally:
+
+```bash
+npx tsx index.ts
+```
+
+Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
+
+<DeployButton language="typescript" />

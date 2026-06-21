@@ -1,0 +1,24 @@
+---
+title: Rust Hello World
+description: Deploy a Rust hello world to Origin Clouds.
+---
+
+import DeployButton from '../../../../components/DeployButton.astro';
+
+Create a new project and edit `src/main.rs`:
+
+```rust
+fn main() {
+    println!("Hello, Origin Clouds!");
+}
+```
+
+Run it locally:
+
+```bash
+cargo run
+```
+
+Ready to deploy? Use the Origin Clouds CLI or SDK to push your app.
+
+<DeployButton language="rust" />
