@@ -18,8 +18,9 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Hello World',
+					label: 'Languages & Frameworks',
 					items: [
+						{ label: 'Overview', slug: 'languages' },
 						{ label: 'Node.js', slug: 'languages/node/hello-world' },
 						{ label: 'TypeScript', slug: 'languages/typescript/hello-world' },
 						{ label: 'Python', slug: 'languages/python/hello-world' },

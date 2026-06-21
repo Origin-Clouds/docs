@@ -1,0 +1,44 @@
+---
+title: Languages & Frameworks
+description: Deploy your first app on Origin Clouds with a hello world API server in your language of choice.
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Pick your language below to get a ready-to-deploy hello world API server.
+Each template returns `{"message": "Hello World"}` as JSON using the language's most popular web framework.
+
+No account needed — grab the code, run it locally, and deploy when you're ready.
+
+<CardGrid stagger>
+  <Card title="Node.js" icon="code-branch">
+    Express hello world API server.  
+    A single file with GET `/` returning JSON.  
+    [View template →](/languages/node/hello-world/)
+  </Card>
+  <Card title="TypeScript" icon="code-branch">
+    TypeScript + Express with full type annotations.  
+    Zero-config with `tsx` for instant execution.  
+    [View template →](/languages/typescript/hello-world/)
+  </Card>
+  <Card title="Python" icon="approve-check-circle">
+    FastAPI async hello world.  
+    Automatic OpenAPI docs at `/docs`.  
+    [View template →](/languages/python/hello-world/)
+  </Card>
+  <Card title="Go" icon="cloud-download">
+    Gin web framework hello world.  
+    Lightweight and fast, just `go run`.  
+    [View template →](/languages/go/hello-world/)
+  </Card>
+  <Card title="Rust" icon="approve-check">
+    Actix-web async hello world with Serde.  
+    Strongly typed JSON responses out of the box.  
+    [View template →](/languages/rust/hello-world/)
+  </Card>
+  <Card title="Java / Spring Boot" icon="open-book">
+    Spring Boot REST controller.  
+    Production-ready with Maven wrapper included.  
+    [View template →](/languages/java/hello-world/)
+  </Card>
+</CardGrid>
